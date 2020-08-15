@@ -1,0 +1,70 @@
+@import '../../App.scss';
+
+.headline-container {
+    @include flex-center;
+    background-color: $primaryColor;
+    height: 15vh;
+    width: calc(100vw - 2.5vh);
+    border-radius: 25px 25px 25px 0px;
+    color: $secondaryColor;
+    position: relative;
+    z-index: 5;
+    &:before {
+        content: "";
+        position: absolute;
+        background-color: $backgroundColor;
+        height: 50px;
+        width: 25px;
+        left: 0px;
+        bottom: -50px;
+        border-top-left-radius: 25px;
+        box-shadow: 0 -25px 0px 0px $primaryColor;
+        z-index: 4;
+    }
+    h2 {
+        z-index: 6;
+    }
+}
+
+.timeshift-container {
+    width: 90%;
+    margin: 0px auto;
+    // background-color: lightskyblue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .timeshift {
+        @include flex-center;
+        height: 30px;
+        // background-color: lightcoral;
+        color: $secondaryColor;
+        border-radius: 10px;
+        padding: 6px;
+        font-weight: bold;
+        &:hover {
+            color: $secondaryAccent;
+            transition: 1s;
+        }
+    }
+}
+
+.main-container {
+    @include flex-center;
+    background-color: $primaryColor;
+    margin-left: auto;
+    border-radius: 25px 0px 0px 25px;
+    width: calc(100vw - 2.5vh);
+    position: relative;
+
+    &:before {
+        content: "";
+        background-color: $backgroundColor;
+        height: 50px;
+        width: 25px;
+        box-shadow: 0px 25px 0px 0px $primaryColor;
+        border-bottom-right-radius: 25px;
+        position: absolute;
+        top: -50px;
+        right: 0px;
+    }
+}
