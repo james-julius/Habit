@@ -7,10 +7,10 @@ export default function Nav() {
     return (
     <>
         <Row style={{height: '4vh'}}/>
-        <div class="nav-container">
+        <div className="nav-container">
             <nav>
-                <ul class="nav-list">
-                    <NavLink to="/">Tasks</NavLink>
+                <ul className="nav-list">
+                    <NavLink to="/tasks">Tasks</NavLink>
                     <NavLink to="/insights">Insights</NavLink>
                     <NavLink to="/settings">Settings</NavLink>
                 </ul>

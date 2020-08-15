@@ -1,0 +1,23 @@
+@import '../../App.scss';
+
+.tasktap {
+    @include flex-center;
+    background-color: $secondaryColor;
+    height: auto;
+    min-height: 50px;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-grow: 1;
+    border-radius: 15px 0px 0px 15px;
+    max-height: 50px;
+    font-weight: bold;
+    color: $tertiaryColor;
+    
+    input {
+        width: 60px;
+        border-radius: 10px;
+        margin: 0px 5px;
+        color: $primaryColor;
+        background-color: $secondaryColor;
+    }
+}
