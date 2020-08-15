@@ -1,7 +1,16 @@
-$primaryColor: #1a771a;
+// Theme 1 - Woodland
+// $primaryColor: rgb(21, 82, 9);
+// $secondaryColor: #a9e7ae;
+// $tertiaryColor: rgb(25, 48, 20);
+// $secondaryAccent: #ffffff;
+// $backgroundColor: rgb(45, 63, 40);
+
+// Theme 2 - Royal Sky
+$primaryColor: rgb(75, 51, 161);
 $secondaryColor: #e4b84a;
-$secondaryAccent: #fdecc1;
-$backgroundColor: rgb(16, 94, 23);
+$tertiaryColor: rgb(84, 26, 122);
+$secondaryAccent: #fcf270;
+$backgroundColor: white;
 
 @mixin flex-center {
     display: flex;
@@ -17,13 +26,13 @@ $backgroundColor: rgb(16, 94, 23);
 }
 
 html, body {
-    height: 100vh;
-    min-height: 100vh;
+    min-height: 100%;
+    // min-height: fill-available;
     min-width: 100vw;
     width: 100vw;
     background-color: $backgroundColor;
-    overflow: hidden;
     padding: 0px;
+    overflow-x: hidden;
 }
 
 h1 {

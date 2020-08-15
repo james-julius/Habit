@@ -23,7 +23,7 @@
     }
     h2 {
         z-index: 6;
-    }
+        }
 }
 
 .timeshift-container {
@@ -35,12 +35,19 @@
     align-items: center;
     .timeshift {
         @include flex-center;
-        height: 30px;
         // background-color: lightcoral;
-        color: $secondaryColor;
+        color: transparent;
         border-radius: 10px;
         padding: 6px;
         font-weight: bold;
+        background: linear-gradient(to right bottom, $primaryColor, $secondaryColor);
+        -webkit-background:-webkit-linear-gradient(to right bottom, $primaryColor, $secondaryColor);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+        border: 1px solid $primaryColor;
+        
         &:hover {
             color: $secondaryAccent;
             transition: 1s;
@@ -50,7 +57,7 @@
 
 .main-container {
     @include flex-center;
-    background-color: $primaryColor;
+    background-color: $tertiaryColor;
     margin-left: auto;
     border-radius: 25px 0px 0px 25px;
     width: calc(100vw - 2.5vh);
@@ -62,10 +69,22 @@
         background-color: $backgroundColor;
         height: 50px;
         width: 25px;
-        box-shadow: 0px 25px 0px 0px $primaryColor;
+        box-shadow: 0px 25px 0px 0px $tertiaryColor;
         border-bottom-right-radius: 25px;
         position: absolute;
         top: -50px;
+        right: 0px;
+        z-index: 4;
+    }
+
+    &:after {
+        content: "";
+        height: 50px;
+        width: 25px;
+        box-shadow: 0px -25px 0px 0px $tertiaryColor;
+        border-top-right-radius: 25px;
+        position: absolute;
+        bottom: -50px;
         right: 0px;
         z-index: 4;
     }
