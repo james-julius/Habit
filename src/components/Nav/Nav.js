@@ -10,9 +10,9 @@ export default function Nav() {
         <div class="nav-container">
             <nav>
                 <ul class="nav-list">
-                    <NavLink to="/tasks">Tasks</NavLink>
+                    <NavLink to="/">Tasks</NavLink>
                     <NavLink to="/">Insights</NavLink>
-                    <NavLink to="/settings">Settings</NavLink>
+                    <NavLink to="/">Settings</NavLink>
                 </ul>
             </nav>
         </div>
