@@ -5,7 +5,8 @@ import './TaskInput.scss';
 
 function TimeShift(props) {
     return (
-        <div class={props.active ? 'timeshift active': 'timeshift'}>
+        <div class={props.active ? 'timeshift active': 'timeshift'} onClick={() => props.setActiveTimeframe(props.time)}>
+            {props.setAc}
             {props.displayVal}
         </div>
     );
@@ -39,7 +40,7 @@ export default function TaskInput() {
                                 displayVal={displayVal}
                                 time={timeframe} 
                                 active={timeframe === activeTimeframe} 
-                                onClick={setActiveTimeframe}
+                                setActiveTimeframe={setActiveTimeframe}
                             />;
                 })}
             </div>
