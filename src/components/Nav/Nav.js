@@ -11,8 +11,8 @@ export default function Nav() {
             <nav>
                 <ul class="nav-list">
                     <NavLink to="/">Tasks</NavLink>
-                    <NavLink to="/">Insights</NavLink>
-                    <NavLink to="/">Settings</NavLink>
+                    <NavLink to="/insights">Insights</NavLink>
+                    <NavLink to="/settings">Settings</NavLink>
                 </ul>
             </nav>
         </div>

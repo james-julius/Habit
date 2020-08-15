@@ -19,7 +19,7 @@
         background-color: $backgroundColor;
         z-index: 4;
         border-bottom-left-radius: 25px;
-        box-shadow: 0px 25px 0px 0px $primaryColor;
+        box-shadow: 0px 25px 0px 0px $secondaryColor;
     }
 
     nav {
@@ -28,7 +28,7 @@
         margin-left: auto;
         height: 100%;
         width: 100%;
-        background-color: $primaryColor;
+        background-color: $secondaryColor;
         border-top-right-radius: 20px;
         z-index: 5;
         ul {
@@ -48,7 +48,7 @@
                 @include flex-center;
                 position: relative;
                 font-weight: bold;
-                background-color: $backgroundColor;
+                background-color: $primaryColor;
                 color: $secondaryColor;
                 border-radius: 15px 15px 15px 15px;
                 flex-grow: 1;
@@ -57,9 +57,11 @@
                 text-decoration: none;
             }
             .active {
-                transition: 1s;
+                transition: .5s;
                 background-color: $secondaryColor;
                 color: $primaryColor;
+                border: 3px solid $primaryColor;
+                margin: 0px;
                 border-radius: 15px 15px 0px 0px;
                 &:before {
                     content: "";
