@@ -3,7 +3,7 @@
 .headline-container {
     @include flex-center;
     background-color: $primaryColor;
-    height: 15vh;
+    height: 12.5vh;
     width: calc(100vw - 2.5vh);
     border-radius: 25px 25px 25px 0px;
     color: $secondaryColor;
@@ -55,6 +55,7 @@
     border-radius: 25px 0px 0px 25px;
     width: calc(100vw - 2.5vh);
     position: relative;
+    z-index: 5;
 
     &:before {
         content: "";
@@ -66,5 +67,34 @@
         position: absolute;
         top: -50px;
         right: 0px;
+        z-index: 4;
+    }
+}
+
+.tasks-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    align-content: flex-start;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    overflow: scroll;
+    z-index: 8;
+
+    .tasktap {
+        @include flex-center;
+        background-color: $secondaryColor;
+        height: auto;
+        min-height: 50px;
+        margin-bottom: 10px;
+        width: 100%;
+        flex-grow: 1;
+        border-radius: 15px;
+        max-height: 50px;
+        font-weight: bold;
+        color: $primaryColor;
     }
 }

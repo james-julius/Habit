@@ -8,10 +8,10 @@ import './App.scss';
 
 function App() {
   return (<>
-      <Nav/>
       <Router>
         {/* <Route path="/" component={Home}/> */}
         <Route path="/" component={TaskInput}/>
+        <Nav/>
       </Router>
     </>
   );
