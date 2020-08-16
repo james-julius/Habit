@@ -1,16 +1,16 @@
 // Theme 1 - Woodland
-$primaryColor: #1a771a;
-$secondaryColor: #e4b84a;
-$tertiaryColor: #1a771a;
-$secondaryAccent: #fdecc1;
-$backgroundColor: rgb(16, 94, 23);
+// $primaryColor: #1a771a;
+// $secondaryColor: #e4b84a;
+// $tertiaryColor: #1a771a;
+// $secondaryAccent: #fdecc1;
+// $backgroundColor: rgb(16, 94, 23);
 
 // Theme 2 - Royal Sky
-// $primaryColor: rgb(75, 51, 161);
-// $secondaryColor: #e4b84a;
-// $tertiaryColor: rgb(84, 26, 122);
-// $secondaryAccent: #fcf270;
-// $backgroundColor: white;
+$primaryColor: rgb(75, 51, 161);
+$secondaryColor: #e4b84a;
+$tertiaryColor: rgb(84, 26, 122);
+$secondaryAccent: #fcf270;
+$backgroundColor: white;
 
 @mixin flex-center {
     display: flex;
@@ -41,4 +41,8 @@ h1 {
 h2 {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+h5 {
+    color: $secondaryColor;
 }

@@ -12,6 +12,13 @@ function TimeShift(props) {
     );
 }
 
+const initTask = {
+    name: "", 
+    trackingUnit: "",
+    customTrackingUnit: false,
+    updateCount: 0
+};
+
 
 export default function TaskInput() {
     const timeframes = [['Today', 'day'], ['This week', 'week'], ['This month', 'month']];
@@ -28,14 +35,9 @@ export default function TaskInput() {
         updateCount: 0
     }]);
     ;
-    const initTask = {
-        name: "", 
-        trackingUnit: "",
-        customTrackingUnit: false,
-        updateCount: 0
-    };
     const [newTask, setNewTask] = useState(initTask);
     const [mainMode, setMainMode] = useState('displayTasks');
+
     const handleAddTask = (task) => {
         console.log(task);
         if (!task.name || !task.trackingUnit) {
@@ -82,29 +84,32 @@ export default function TaskInput() {
                     </div>
                 </>}
                 {(mainMode === 'createTask' && <>
-                        <div className="create-task-container">
+                        <Container className="create-task-container">
                             {/* <div className="back-button" onClick={() => setMainMode('displayTasks')}>Go back</div> */}
-                            <h5>What task do you want to track?</h5>
-                            <input type="text" value={newTask.name} onChange={(e) => {setNewTask({...newTask, name: e.target.value})}} placeholder="Enter task name here"/>
-                            <h5>What unit should we track it in?</h5>
-                            <select value={newTask.trackingUnit} onChange={(e) => {
-                                if (e.target.value === 'custom') {
-                                    setNewTask({...newTask, trackingUnit: e.target.value, customTrackingUnit: true})
-                                } else {
-                                    setNewTask({...newTask, trackingUnit: e.target.value, customTrackingUnit: false})
-                                }
-                                }}>
-                                <option value="">Select...</option>
-                                <option value="times">Times</option>
-                                <option value="minutes">Minutes</option>
-                                <option value="hours">Hours</option>
-                                <option value="km">KM</option>
-                                <option value="pages">Pages</option>
-                                <option value="custom">Other...</option>
-                            </select>
-                            {(newTask.trackingUnit === 'custom') && <input value={newTask.trackingUnit} onChange={e => setNewTask({...newTask, trackingUnit: e.target.value})}/>}
-
-                        </div>
+                            <Row>
+                                <h5>What task do you want to track?</h5>
+                                <input type="text" value={newTask.name} onChange={(e) => {setNewTask({...newTask, name: e.target.value})}} placeholder="Enter task name here"/>
+                            </Row>
+                            <Row>
+                                <h5>What unit should we track it in?</h5>
+                                <select value={newTask.trackingUnit} onChange={(e) => {
+                                    if (e.target.value === 'custom') {
+                                        setNewTask({...newTask, trackingUnit: e.target.value, customTrackingUnit: true})
+                                    } else {
+                                        setNewTask({...newTask, trackingUnit: e.target.value, customTrackingUnit: false})
+                                    }
+                                    }}>
+                                    <option value="">Select...</option>
+                                    <option value="times">Times</option>
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
+                                    <option value="km">KM</option>
+                                    <option value="pages">Pages</option>
+                                    <option value="custom">Other...</option>
+                                </select>
+                                {(newTask.trackingUnit === 'custom') && <input value={newTask.trackingUnit} onChange={e => setNewTask({...newTask, trackingUnit: e.target.value})}/>}
+                            </Row>
+                        </Container>
                 </>)}
                 <div className="action-container">
                     {mainMode === 'displayTasks' && <> 
