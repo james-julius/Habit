@@ -4,7 +4,7 @@ import './TaskTap.scss';
 export default function TaskTap({taskName, value, trackingUnit, tasks, setTasks}) {
     const taskIndex = tasks.findIndex(element => element.name === taskName);
 
-    const handleChange = (value) => {
+    const handleChange = (value = 0) => {
         let updatedTasks = [...tasks];
         updatedTasks[taskIndex] = {
             ...updatedTasks[taskIndex],

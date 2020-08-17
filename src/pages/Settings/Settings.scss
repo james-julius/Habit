@@ -2,4 +2,65 @@
 
 #settings-page {
     height: 86vh;
+    
+    headline-container {
+        @include flex-center;
+        background-color: $primaryColor;
+        height: 12.5vh;
+        width: calc(100vw - 2.5vh);
+        border-radius: 25px 25px 25px 0px;
+        color: $secondaryColor;
+        position: relative;
+        z-index: 10;
+        &:before {
+            content: "";
+            position: absolute;
+            background-color: $backgroundColor;
+            height: 50px;
+            width: 25px;
+            left: 0px;
+            bottom: -50px;
+            border-top-left-radius: 25px;
+            box-shadow: 0 -25px 0px 0px $primaryColor;
+            z-index: 4;
+        }
+        h2 {
+            z-index: 6;
+            }
+    }
+
+    .main-container {
+        @include flex-center;
+        flex-direction: column;
+        background-color: $tertiaryColor;
+        margin-left: auto;
+        border-radius: 25px 0px 0px 25px;
+        width: calc(100vw - 2.5vh);
+        position: relative;
+        z-index: 5;
+
+        &:before {
+            content: "";
+            height: 50px;
+            width: 25px;
+            box-shadow: 0px -25px 0px 0px $secondaryColor;
+            border-top-right-radius: 25px;
+            position: absolute;
+            bottom: -50px;
+            right: 0px;
+            z-index: 3;
+        }
+        &:after {
+            content: "";
+            background-color: transparent;
+            height: 50px;
+            width: 25px;
+            box-shadow: 0px 25px 0px 0px $tertiaryColor;
+            border-bottom-right-radius: 25px;
+            position: absolute;
+            top: -50px;
+            right: 0px;
+            z-index: 3;
+        }
+    }
 }

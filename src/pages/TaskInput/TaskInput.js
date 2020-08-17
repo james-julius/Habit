@@ -75,6 +75,7 @@ export default function TaskInput() {
             </div>
         </Row>
         <Row style={{height: '61vh'}}>
+            {/*=================* Default mode - Display Tasks and input progress*============*/}
             <div className="main-container">
                 {(mainMode === 'displayTasks') && <>
                     <div className="tasks-container">
@@ -83,6 +84,7 @@ export default function TaskInput() {
                         })}
                     </div>
                 </>}
+            {/*=================* Creation mode - Create Tasks and set tracking properties *============*/}
                 {(mainMode === 'createTask' && <>
                         <Container className="create-task-container">
                             {/* <div className="back-button" onClick={() => setMainMode('displayTasks')}>Go back</div> */}

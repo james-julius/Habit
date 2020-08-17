@@ -190,6 +190,7 @@
     }
 
     input {
+        @include flex-center;
         border-radius: 8px;
     }
 }
