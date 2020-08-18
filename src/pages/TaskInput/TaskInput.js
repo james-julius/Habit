@@ -35,8 +35,9 @@ export default function TaskInput() {
         updateCount: 0
     }]);
     ;
+
     const [newTask, setNewTask] = useState(initTask);
-    const [mainMode, setMainMode] = useState('displayTasks');
+    const [mainMode, setMainMode] = useState('createTask');
 
     const handleAddTask = (task) => {
         console.log(task);
@@ -109,7 +110,7 @@ export default function TaskInput() {
                                     <option value="pages">Pages</option>
                                     <option value="custom">Other...</option>
                                 </select>
-                                {(newTask.trackingUnit === 'custom') && <input value={newTask.trackingUnit} onChange={e => setNewTask({...newTask, trackingUnit: e.target.value})}/>}
+                                {(newTask.trackingUnit === 'custom') && <input value={newTask.trackingUnit} onChange={e => setNewTask({...newTask, customTrackingUnit: true, trackingUnit: e.target.value})}/>}
                             </Row>
                         </Container>
                 </>)}
