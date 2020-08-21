@@ -2,23 +2,23 @@
 
 .headline-container {
     @include flex-center;
-    background-color: $primaryColor;
+    background-color: var(--primary-color);
     height: 12.5vh;
     width: calc(100vw - 2.5vh);
     border-radius: 25px 25px 25px 0px;
-    color: $secondaryColor;
+    color: var(--secondary-color);
     position: relative;
     z-index: 5;
     &:before {
         content: "";
         position: absolute;
-        background-color: $backgroundColor;
+        background-color: var(--background-color);
         height: 50px;
         width: 25px;
         left: 0px;
         bottom: -50px;
         border-top-left-radius: 25px;
-        box-shadow: 0 -25px 0px 0px $primaryColor;
+        box-shadow: 0 -25px 0px 0px var(--primary-color);
         z-index: 4;
     }
     .date-block {
@@ -27,11 +27,11 @@
         width: 10vh;
         z-index: 8;
         border-radius: 15px;
-        border: 1px solid $secondaryColor;;
+        border: 1px solid var(--secondary-color);;
         margin-right: 15px;
         grid-template: "day" 3fr
                        "month" 1fr / 1fr;
-        box-shadow: 1px 1px $secondaryColor;
+        box-shadow: 1px 1px var(--secondary-color);
         h3, h4 {
             margin: 0px;
             padding: 0px;
@@ -66,21 +66,21 @@
         border-radius: 10px;
         padding: 6px;
         font-weight: bold;
-        background: linear-gradient(to right bottom, $primaryColor, $secondaryColor);
-        -webkit-background:-webkit-linear-gradient(to right bottom, $primaryColor, $secondaryColor);
+        background: linear-gradient(to right bottom, var(--primary-color), var(--secondary-color));
+        -webkit-background:-webkit-linear-gradient(to right bottom, var(--primary-color), var(--secondary-color));
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         cursor: pointer;
-        border: 1px solid $primaryColor;
+        border: 1px solid var(--primary-color);
         
         &:hover {
-            color: $secondaryAccent;
+            color: var(--secondary-accent);
             transition: .2s;
         }
         &.active {
-            border: 2.5px solid $primaryColor;
-            box-shadow: 1px 1px $primaryColor;;
+            border: 2.5px solid var(--primary-color);
+            box-shadow: 1px 1px var(--primary-color);;
         }
     }
 }
@@ -88,7 +88,7 @@
 .main-container {
     @include flex-center;
     flex-direction: column;
-    background-color: $tertiaryColor;
+    background-color: var(--tertiary-color);
     margin-left: auto;
     border-radius: 25px 0px 0px 25px;
     width: calc(100vw - 2.5vh);
@@ -97,10 +97,10 @@
 
     &:after {
         content: "";
-        background-color: $backgroundColor;
+        background-color: var(--background-color);
         height: 50px;
         width: 25px;
-        box-shadow: 0px 25px 0px 0px $tertiaryColor;
+        box-shadow: 0px 25px 0px 0px var(--tertiary-color);
         border-bottom-right-radius: 25px;
         position: absolute;
         top: -50px;
@@ -112,7 +112,7 @@
         content: "";
         height: 50px;
         width: 25px;
-        box-shadow: 0px -25px 0px 0px $secondaryColor;
+        box-shadow: 0px -25px 0px 0px var(--secondary-color);
         border-top-right-radius: 25px;
         position: absolute;
         bottom: -50px;
@@ -136,7 +136,7 @@
 
     .tasktap {
         @include flex-center;
-        background-color: $secondaryColor;
+        background-color: var(--secondary-color);
         height: auto;
         min-height: 50px;
         margin-bottom: 10px;
@@ -145,7 +145,7 @@
         border-radius: 15px 0px 0px 15px;
         max-height: 50px;
         font-weight: bold;
-        color: $tertiaryColor;
+        color: var(--tertiary-color);
     }
 }
 .tasks-container {
@@ -187,8 +187,8 @@
         left: 0px;
         height: 30px;
         width: 75px;
-        background-color: $secondaryColor;
-        color: $backgroundColor;
+        background-color: var(--secondary-color);
+        color: var(--background-color);
         border-radius: 10px;
     }
 
@@ -202,18 +202,18 @@
     height: 15%;
     // padding: 3px;
     width: 100%;
-    border-top: 2px solid $secondaryColor;
-    background-color: $tertiaryColor;
+    border-top: 2px solid var(--secondary-color);
+    background-color: var(--tertiary-color);
     border-bottom-left-radius: 25px;
     .action-button {
         @include flex-center;
         height: 100%;
         width: 50%;
         // margin: 5px 5px;
-        color: $secondaryColor;
-        border: 1.5px solid $secondaryColor;
-        background-color: $primaryColor;
-        box-shadow: 1px 1px $secondaryColor;
+        color: var(--secondary-color);
+        border: 1.5px solid var(--secondary-color);
+        background-color: var(--primary-color);
+        box-shadow: 1px 1px var(--secondary-color);
         z-index: 12;
         font-weight: bold;
         position: relative;
@@ -227,7 +227,7 @@
             position: absolute;
             top: 0px;
             right: -12px;
-            background-color: $secondaryColor;
+            background-color: var(--secondary-color);
         }
     }
     .right {

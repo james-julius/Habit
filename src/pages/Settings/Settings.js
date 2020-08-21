@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import themes from '../../hooks/themes';
 import './Settings.scss';
 
 export default function Settings() {
     const [theme, setTheme] = useState('Forest Green');
 
+    useEffect(() => {
+        themes.setTheme(theme);
+    }, [theme]);
 
     return(<Container id="settings-page">
         <Row style={{height: '2.5vh'}} noGutters/>
@@ -23,15 +27,10 @@ export default function Settings() {
                     </div>
                     <div>
                         <h5>Choose your theme</h5>
-                        <h5>Currently Active: {theme}</h5>
-                        <select>
-                            <option value="">Select...</option>
-                            <option value="times">Times</option>
-                            <option value="minutes">Minutes</option>
-                            <option value="hours">Hours</option>
-                            <option value="km">KM</option>
-                            <option value="pages">Pages</option>
-                            <option value="custom">Other...</option>
+                        <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+                            <option value="Forest Green" selected>Forest Green</option>
+                            <option value="Royal Sky">Royal Sky</option>
+                            <option value="Burnt Orange">Burnt Orange</option>
                         </select>
                     </div>
                 </div>

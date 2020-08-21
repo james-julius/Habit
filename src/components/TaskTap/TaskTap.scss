@@ -2,7 +2,7 @@
 
 .tasktap {
     @include flex-center;
-    background-color: $secondaryColor;
+    background-color: var(--secondary-color);
     height: auto;
     min-height: 50px;
     margin-bottom: 10px;
@@ -11,13 +11,13 @@
     border-radius: 15px 0px 0px 15px;
     max-height: 50px;
     font-weight: bold;
-    color: $tertiaryColor;
+    color: var(--tertiary-color);
     
     input {
         width: 60px;
         border-radius: 10px;
         margin: 0px 5px;
-        color: $primaryColor;
-        background-color: $secondaryColor;
+        color: var(--primary-color);
+        background-color: var(--secondary-color);
     }
 }

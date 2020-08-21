@@ -5,23 +5,23 @@
     
     headline-container {
         @include flex-center;
-        background-color: $primaryColor;
+        background-color: var(--primary-color);
         height: 12.5vh;
         width: calc(100vw - 2.5vh);
         border-radius: 25px 25px 25px 0px;
-        color: $secondaryColor;
+        color: var(--secondary-color);
         position: relative;
         z-index: 10;
         &:before {
             content: "";
             position: absolute;
-            background-color: $backgroundColor;
+            background-color: var(--background-color);
             height: 50px;
             width: 25px;
             left: 0px;
             bottom: -50px;
             border-top-left-radius: 25px;
-            box-shadow: 0 -25px 0px 0px $primaryColor;
+            box-shadow: 0 -25px 0px 0px var(--primary-color);
             z-index: 4;
         }
         h2 {
@@ -32,7 +32,7 @@
     .main-container {
         @include flex-center;
         flex-direction: column;
-        background-color: $tertiaryColor;
+        background-color: var(--tertiary-color);
         margin-left: auto;
         border-radius: 25px 0px 0px 25px;
         width: calc(100vw - 2.5vh);
@@ -43,7 +43,7 @@
             content: "";
             height: 50px;
             width: 25px;
-            box-shadow: 0px -25px 0px 0px $secondaryColor;
+            box-shadow: 0px -25px 0px 0px var(--secondary-color);
             border-top-right-radius: 25px;
             position: absolute;
             bottom: -50px;
@@ -55,7 +55,7 @@
             background-color: transparent;
             height: 50px;
             width: 25px;
-            box-shadow: 0px 25px 0px 0px $tertiaryColor;
+            box-shadow: 0px 25px 0px 0px var(--tertiary-color);
             border-bottom-right-radius: 25px;
             position: absolute;
             top: -50px;
