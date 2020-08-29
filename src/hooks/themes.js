@@ -2,18 +2,18 @@ class themeHandler {
     constructor() {
         this.themes = {
             'Forest Green': {
-                ['--primary-color']: '#1a771a',
-                ['--secondary-color']: '#e4b84a',
-                ['--tertiary-color']: '#1a771a',
-                ['--secondary-accent']: '#fdecc1',
-                ['--background-color']: 'rgb(16, 94, 23)'
+                '--primary-color': '#1a771a',
+                '--secondary-color': '#e4b84a',
+                '--tertiary-color': '#1a771a',
+                '--secondary-accent': '#fdecc1',
+                '--background-color': 'rgb(16, 94, 23)'
             },
             'Royal Sky': {
-                ['--primary-color']: 'rgb(75, 51, 161)',
-                ['--secondary-color']: '#e4b84a',
-                ['--tertiary-color']: 'rgb(84, 26, 122)',
-                ['--secondary-accent']: '#fcf270',
-                ['--background-color']: 'white'
+                '--primary-color': 'rgb(75, 51, 161)',
+                '--secondary-color': '#e4b84a',
+                '--tertiary-color': 'rgb(84, 26, 122)',
+                '--secondary-accent': '#fcf270',
+                '--background-color': 'white'
             }  
         }
     }

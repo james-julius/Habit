@@ -15,8 +15,7 @@ function TimeShift(props) {
 const initTask = {
     name: "", 
     trackingUnit: "",
-    customTrackingUnit: false,
-    updateCount: 0
+    customTrackingUnit: false
 };
 
 
@@ -26,18 +25,16 @@ export default function TaskInput() {
     const [tasks, setTasks] = useState([{
         name: "Brush teeth", 
         trackingUnit: "Times",
-        customTrackingUnit: false,
-        updateCount: 0
+        customTrackingUnit: false
     },{
         name: "Read", 
         trackingUnit: "Pages",
-        customTrackingUnit: false,
-        updateCount: 0
+        customTrackingUnit: false
     }]);
     ;
 
     const [newTask, setNewTask] = useState(initTask);
-    const [mainMode, setMainMode] = useState('createTask');
+    const [mainMode, setMainMode] = useState('displayTasks');
 
     const handleAddTask = (task) => {
         console.log(task);
@@ -81,7 +78,7 @@ export default function TaskInput() {
                 {(mainMode === 'displayTasks') && <>
                     <div className="tasks-container">
                         {tasks.map(task => {
-                            return <TaskTap taskName={task.name} trackingUnit={task.trackingUnit} tasks={tasks} setTasks={setTasks}/>
+                            return <TaskTap key={task.id} taskName={task.name} trackingUnit={task.trackingUnit} tasks={tasks} setTasks={setTasks}/>
                         })}
                     </div>
                 </>}

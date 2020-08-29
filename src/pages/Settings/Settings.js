@@ -4,7 +4,7 @@ import themes from '../../hooks/themes';
 import './Settings.scss';
 
 export default function Settings() {
-    const [theme, setTheme] = useState('Forest Green');
+    const [theme, setTheme] = useState('Royal Sky');
 
     useEffect(() => {
         themes.setTheme(theme);

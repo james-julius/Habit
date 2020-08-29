@@ -1,0 +1,19 @@
+{
+    "users": [{
+        "id": 0,
+        "firstName": "James"
+    }],
+    "taskdata": [{
+        "id": 0,
+        "tasks": [{
+            "taskID": 0,
+            "name": "Brush teeth",
+            "trackingUnit": "Times",
+            "customTrackingUnit": false,
+            "inputs": [{
+                "inputID": 0,
+                "date": ""
+            }]
+        }]
+    }]
+}

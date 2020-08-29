@@ -2,4 +2,97 @@
 
 #insights-page {
     height: 86vh;
+ 
+    headline-container {
+        @include flex-center;
+        background-color: var(--primary-color);
+        height: 12.5vh;
+        width: calc(100vw - 2.5vh);
+        border-radius: 25px 25px 25px 0px;
+        color: var(--secondary-color);
+        position: relative;
+        z-index: 10;
+        &:before {
+            content: "";
+            position: absolute;
+            background-color: var(--background-color);
+            height: 50px;
+            width: 25px;
+            left: 0px;
+            bottom: -50px;
+            border-top-left-radius: 25px;
+            box-shadow: 0 -25px 0px 0px var(--primary-color);
+            z-index: 4;
+        }
+        h2 {
+            z-index: 6;
+            }
+    }
+
+    .main-container {
+        @include flex-center;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--tertiary-color);
+        margin-left: auto;
+        border-radius: 25px 0px 0px 25px;
+        width: calc(100vw - 2.5vh);
+        position: relative;
+        z-index: 5;
+
+        &:before {
+            content: "";
+            height: 50px;
+            width: 25px;
+            box-shadow: 0px -25px 0px 0px var(--secondary-color);
+            border-top-right-radius: 25px;
+            position: absolute;
+            bottom: -50px;
+            right: 0px;
+            z-index: 3;
+        }
+        &:after {
+            content: "";
+            background-color: transparent;
+            height: 50px;
+            width: 25px;
+            box-shadow: 0px 25px 0px 0px var(--tertiary-color);
+            border-bottom-right-radius: 25px;
+            position: absolute;
+            top: -50px;
+            right: 0px;
+            z-index: 3;
+        }
+        .task-selector {
+            margin-top: 2vh;
+            z-index: 10;
+            height: 7vh;
+            border: 3px solid var(--secondary-color);
+            border-radius: 15px;
+            width: 90%;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            align-items: center;
+            padding: 2px;
+            .task-button {
+                @include flex-center;
+                background-color: var(--secondary-color);
+                min-width: 25%;
+                height: 100%;
+                border-radius: 10px;
+                padding: 2px 6px;
+                font-weight: bold;
+                margin: 0px 2px 0px 0px;
+                cursor: pointer;
+                color: var(--primary-color);
+            }
+        }
+
+        .chart-container {
+            margin-top: 3vh;
+            height: 40vh;
+            width: 90%;
+        }
+    }
 }
