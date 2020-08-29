@@ -48,7 +48,7 @@
     }
     h2 {
         z-index: 6;
-        }
+    }
 }
 
 .timeshift-container {
@@ -94,6 +94,10 @@
     width: calc(100vw - 2.5vh);
     position: relative;
     z-index: 5;
+
+    h2 {
+        color: var(--secondary-color);
+    }
 
     &:after {
         content: "";

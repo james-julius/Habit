@@ -22,6 +22,9 @@ const initTask = {
 export default function TaskInput() {
     const timeframes = [['Today', 'day'], ['This week', 'week'], ['This month', 'month']];
     const [activeTimeframe, setActiveTimeframe] = useState('day');
+    const [displayMessage, setDisplayMessage] = useState('');
+    const [mainMode, setMainMode] = useState('displayTasks');
+    const [newTask, setNewTask] = useState(initTask);
     const [tasks, setTasks] = useState([{
         name: "Brush teeth", 
         trackingUnit: "Times",
@@ -31,10 +34,16 @@ export default function TaskInput() {
         trackingUnit: "Pages",
         customTrackingUnit: false
     }]);
-    ;
+    
+    useEffect(() => {
+        const previousMainMode = mainMode;
+        setMainMode('displayMessage');
+        setTimeout(() => {
+            setMainMode(previousMainMode);
+            setDisplayMessage('');
+        }, 500);
+    }, [displayMessage])
 
-    const [newTask, setNewTask] = useState(initTask);
-    const [mainMode, setMainMode] = useState('displayTasks');
 
     const handleAddTask = (task) => {
         console.log(task);
@@ -75,13 +84,19 @@ export default function TaskInput() {
         <Row style={{height: '61vh'}}>
             {/*=================* Default mode - Display Tasks and input progress*============*/}
             <div className="main-container">
-                {(mainMode === 'displayTasks') && <>
-                    <div className="tasks-container">
-                        {tasks.map(task => {
-                            return <TaskTap key={task.id} taskName={task.name} trackingUnit={task.trackingUnit} tasks={tasks} setTasks={setTasks}/>
-                        })}
-                    </div>
-                </>}
+            {(mainMode === 'displayMessage') && <>
+                <div className="tasks-container">
+                    {<h2>{displayMessage}</h2>}
+                </div>
+            </>}
+
+            {(mainMode === 'displayTasks') && <>
+                <div className="tasks-container">
+                    {tasks.map(task => {
+                        return <TaskTap key={task.id} taskName={task.name} trackingUnit={task.trackingUnit} tasks={tasks} setTasks={setTasks}/>
+                    })}
+                </div>
+            </>}
             {/*=================* Creation mode - Create Tasks and set tracking properties *============*/}
                 {(mainMode === 'createTask' && <>
                         <Container className="create-task-container">
@@ -114,7 +129,7 @@ export default function TaskInput() {
                 <div className="action-container">
                     {mainMode === 'displayTasks' && <> 
                             <div className="action-button left" onClick={() => setMainMode('createTask')}>Add new Task</div>
-                            <div className="action-button right">Update</div>
+                            <div onClick={() => setDisplayMessage('Tasks updated')} className="action-button right">Update</div>
                     </>}
                     {(mainMode === 'createTask') && <>
                             <div className="action-button left" 
