@@ -6,14 +6,79 @@
     "taskdata": [{
         "id": 0,
         "tasks": [{
-            "taskID": 0,
-            "name": "Brush teeth",
-            "trackingUnit": "Times",
-            "customTrackingUnit": false,
-            "inputs": [{
-                "inputID": 0,
-                "date": ""
-            }]
-        }]
+          "taskID": 0,
+          "name": "Brush teeth",
+          "trackingUnit": "Times",
+          "customTrackingUnit": false,
+          "inputs": [
+            {
+              "inputID": 0,
+              "date": "2020-08-01T04:00:00.000Z",
+              "value": 2
+            },
+            {
+              "inputID": 0,
+              "date": "2020-08-02T04:00:00.000Z",
+              "value": 1
+            },
+            {
+              "inputID": 0,
+              "date": "2020-08-03T04:00:00.000Z",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "taskID": 1,
+          "name": "Reading",
+          "trackingUnit": "pages",
+          "customTrackingUnit": false,
+          "inputs": [
+            {
+              "inputID": 0,
+              "date": "2020-08-01T04:00:00.000Z",
+              "value": 50
+            },
+            {
+              "inputID": 0,
+              "date": "2020-08-02T04:00:00.000Z",
+              "value": 85
+            },
+            {
+              "inputID": 0,
+              "date": "2020-08-04T04:00:00.000Z",
+              "value": 170
+            }
+          ]
+        },
+        {
+          "taskID": 2,
+          "name": "Workouts",
+          "trackingUnit": "minutes",
+          "customTrackingUnit": false,
+          "inputs": [
+            {
+              "inputID": 0,
+              "date": "2020-08-01T04:00:00.000Z",
+              "value": 30
+            },
+            {
+              "inputID": 0,
+              "date": "2020-08-02T04:00:00.000Z",
+              "value": 15
+            },
+            {
+              "inputID": 0,
+              "date": "2020-08-03T04:00:00.000Z",
+              "value": 20
+            },
+            {
+              "inputID": 0,
+              "date": "2020-08-05T04:00:00.000Z",
+              "value": 10
+            }
+          ]
+        }
+      ]
     }]
 }

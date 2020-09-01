@@ -1,18 +1,20 @@
 const baseURL = "http://localhost:4000";
 
 const API = {
-    getTasks: (userID) => {
-        fetch(`${baseURL}/taskdata/0`, {headers: {method: "GET"}})
+    getTasks: async (userID) => {
+        const taskData = await fetch(`${baseURL}/taskdata/0`)
             .then(response => {
-                console.log(response)
-                console.log(response.body);
-                console.log(JSON.parse(response.body))
-                return response.data;
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                return data;
             })
             .catch(err => {
                 console.log(err);
                 return err;
             });
+        return taskData;
     },
     createTask: async ({}) => {
         return "task created"

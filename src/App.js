@@ -12,7 +12,7 @@ function App() {
   return (<>
       <Router>
         <Switch>
-          <Route exact path="/" componen={Home}/>
+          <Route exact path="/" component={Home}/>
           <Route path="/tasks" component={TaskInput}/>
           <Route path="/insights" component={Insights}/>
           <Route path="/settings" component={Settings}/>
