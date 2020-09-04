@@ -37,11 +37,13 @@ export default function TaskInput() {
     
     useEffect(() => {
         const previousMainMode = mainMode;
+        if (mainMode !== '') {
         setMainMode('displayMessage');
-        setTimeout(() => {
-            setMainMode(previousMainMode);
-            setDisplayMessage('');
-        }, 500);
+            setTimeout(() => {
+                setMainMode(previousMainMode);
+                setDisplayMessage('');
+            }, 350);
+        }
     }, [displayMessage])
 
 

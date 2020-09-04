@@ -2,7 +2,7 @@ const baseURL = "http://localhost:4000";
 
 const API = {
     getTasks: async (userID) => {
-        const taskData = await fetch(`${baseURL}/taskdata/0`)
+        const taskData = await fetch(`${baseURL}/taskdata/${userID}`)
             .then(response => {
                 return response.json();
             })
