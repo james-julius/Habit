@@ -7,14 +7,14 @@ import './Insights.scss';
 
 
 export default function Insights() {
-    const [tasksLoading, setTasksLoading] = useState(API.getTasks());
+    const [tasksLoading, setTasksLoading] = useState(API.getTasks(0));
     const [tasks, setTasks] = useState('');
     const [dataReady, setDataReady] = useState(false);
     const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
     const [userID, setUserID] = useState(0);
 
     function createChartData() {
-        if (tasks !== '') {
+        if (tasks !== "" && tasks !== undefined) {
             let inputs = tasks[currentTaskIndex].inputs;
             let chartData = [];
             chartData.push({
@@ -38,8 +38,9 @@ export default function Insights() {
     useEffect(() => {
         console.log('taskLoading useEffect called with: ', tasksLoading)
             const load = async () => {
-                const loadedData = await API.getTasks()
+                await API.getTasks()
                     .then((data) => {
+                        console.log(data);
                         setTasks(data.tasks);
                         setDataReady(true);
                     })
@@ -66,7 +67,7 @@ export default function Insights() {
         <Row style={{height: '65vh'}}>  
                 <div className="main-container">
                     <div className="task-selector">
-                        {dataReady && tasks.map((task) => {
+                        {dataReady && (tasks !== undefined) && tasks.map((task) => {
                             return <div onClick={() => {setCurrentTaskIndex(task.taskID)}} class="task-button">{task.name}</div>
                         })}
                     </div>
